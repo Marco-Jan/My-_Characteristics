@@ -6,8 +6,7 @@ $showForm = true;
 $chosenSex = $_POST["sex"] ?? "";
 $sexes = ["male", "female", "diverse"];
 
-$max_file_size = 1024 * 1024 * 4;
-//$upload_dir = __DIR__ . "/uploads/";
+$max_file_size = 1024 * 1024 * 2;
 $allowed_types = ["image/jpeg", "image/png"];
 $allowed_extensions = ["jpeg", "jpg", "png"];
 
@@ -31,7 +30,7 @@ $filters = [
   "email" => FILTER_VALIDATE_EMAIL,
   "age" => [
     "filter" => FILTER_VALIDATE_INT,
-    "options" => ["min_range" => 12, "max_range" => 100]
+    "options" => ["min_range" => 12, "max_range" => 120]
   ],
   "phone" => FILTER_SANITIZE_NUMBER_INT,
   "street" => FILTER_DEFAULT,

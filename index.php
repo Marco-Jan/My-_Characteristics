@@ -1,11 +1,11 @@
-
 <?php
-$title = 'My 
-Characteristics';
-?>
+require_once __DIR__ . '/inc/all.php';
 
-<?php include 'header.php'; ?>
-<?php include 'form.php'; ?>
+$images = new ImageGalleryCall($pdo);
 
-</body>
-</html>
+// var_dump($pdo);
+// die();
+
+render(__DIR__ . '/view/index.view.php', [
+    'images' => $images->fetchAll()
+]);
